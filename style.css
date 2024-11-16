@@ -3,13 +3,12 @@ body{
     font-family: Arial, sans-serif;
 }
 
-form{
+form, #info{
     background-color: #ffffff;
     text-align: center;
-    max-width:450px;
+    max-width:650px;
     border-radius: 10px;
     padding: 25px;
-    
     margin: 50px auto;
 }
 
@@ -52,12 +51,6 @@ form{
     font-size: 30px;
 }
 
-@media screen and (max-width: 500px){
-    form{
-        background-color: #d9d9d9;
-    }
-}
-
 hr{
     width:90%;
     height: 7px;
@@ -65,4 +58,17 @@ hr{
     background-color: #d9d9d9;
     border:none;
     margin:20px;
+}
+
+#desc{
+    display: flex;
+    flex-wrap: wrap;
+    font-size:1.25em;
+    padding: 12px;
+}
+
+@media screen and (max-width: 500px){
+    body{
+        background-color: #fff;
+    }
 }
