@@ -4,77 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temperature Converter</title>
+    <icon type="favicon" src="thermometer.jpg"></icon>
     <link rel="stylesheet" href="style.css">
 </head>
-<form>
-    <div>
-        <h1 id="title">Temperature Converter</h1>
+<body>
+    <form>
+        <div>
+            <h1 id="title">Temperature Converter</h1>
 
-        <input type="number" id="inputTemps" value="0">
+            <input type="number" id="inputTemps" value="0">
 
-        <div class="radio" for="cToF">
-            <label for="cToF">Celcius => Fahrenheit<input type="radio" class="radio" id="cToF" name="chooseConversion" checked></label>
+            <div class="radio" for="cToF">
+                <label for="cToF">Celcius => Fahrenheit<input type="radio" class="radio" id="cToF" name="chooseConversion" checked></label>
+            </div>
+
+            <div class="radio" for="cToK">
+                <label for="cToK">Celcius => Kelvin<input type="radio" class="radio" id="cToK" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="cToR">
+                <label for="cToR">Celcius => Rankine<input type="radio" class="radio" id="cToR" name="chooseConversion" ></label>
+            </div>
+
+            <hr>
+
+            <div class="radio" for="fToC">
+                <label for="fToC">Fahrenheit => Celcius<input type="radio" class="radio" id="fToC" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="fToK">
+                <label for="fToK">Fahrenheit => Kelvin<input type="radio" class="radio" id="fToK" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="fToR">
+                <label for="fToR">Fahrenheit => Rankine<input type="radio" class="radio" id="fToR" name="chooseConversion" ></label>
+            </div>
+
+            <hr>
+
+            <div class="radio" for="kToC">
+                <label for="kToC">Kelvin => Celcius<input type="radio" class="radio" id="kToC" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="kToF">
+                <label for="kToF">Kelvin=> Fahrenheit<input type="radio" class="radio" id="kToF" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="kToR">
+                <label for="kToR">Kelvin => Rankine<input type="radio" class="radio" id="kToR" name="chooseConversion" ></label>
+            </div>
+    
+            <hr>
+
+            <div class="radio" for="rToC">
+                <label for="rToC">Rankine => Celcius<input type="radio" class="radio" id="rToC" name="chooseConversion" ></label>
+            </div>
+
+            <div class="radio" for="rToF">
+                <label for="rToF">Rankine => Fahrenheit<input type="radio" class="radio" id="rToF" name="chooseConversion" ></label>
+            </div>
+    
+            <div class="radio" for="rToK">
+                <label for="rToK">Rankine => Kelvin<input type="radio" class="radio" id="rToK" name="chooseConversion" ></label>
+            </div>
+
+            <button type="button" id="submit" onclick="convert()">Submit</button>
+    
+            <h3 id="outputTemps"></h3>
         </div>
 
-        <div class="radio" for="cToK">
-            <label for="cToK">Celcius => Kelvin<input type="radio" class="radio" id="cToK" name="chooseConversion" ></label>
-        </div>
+        <script src="index.js"></script>
+    </form>
 
-        <div class="radio" for="cToR">
-            <label for="cToR">Celcius => Rankine<input type="radio" class="radio" id="cToR" name="chooseConversion" ></label>
-        </div>
-
-        <hr>
-
-        <div class="radio" for="fToC">
-            <label for="fToC">Fahrenheit => Celcius<input type="radio" class="radio" id="fToC" name="chooseConversion" ></label>
-        </div>
-
-        <div class="radio" for="fToK">
-            <label for="fToK">Fahrenheit => Kelvin<input type="radio" class="radio" id="fToK" name="chooseConversion" ></label>
-        </div>
-
-        <div class="radio" for="fToR">
-            <label for="fToR">Fahrenheit => Rankine<input type="radio" class="radio" id="fToR" name="chooseConversion" ></label>
-        </div>
-
-        <hr>
-
-        <div class="radio" for="kToC">
-            <label for="kToC">Kelvin => Celcius<input type="radio" class="radio" id="kToC" name="chooseConversion" ></label>
-        </div>
-        
-
-        <div class="radio" for="kToF">
-            <label for="kToF">Kelvin=> Fahrenheit<input type="radio" class="radio" id="kToF" name="chooseConversion" ></label>
-        </div>
-
-
-        <div class="radio" for="kToR">
-            <label for="kToR">Kelvin => Rankine<input type="radio" class="radio" id="kToR" name="chooseConversion" ></label>
-        </div>
-
-
-        <hr>
-
-        <div class="radio" for="rToC">
-            <label for="rToC">Rankine => Celcius<input type="radio" class="radio" id="rToC" name="chooseConversion" ></label>
-        </div>
-
-        <div class="radio" for="rToF">
-            <label for="rToF">Rankine => Fahrenheit<input type="radio" class="radio" id="rToF" name="chooseConversion" ></label>
-        </div>
-
-        <div class="radio" for="rToK">
-            <label for="rToK">Rankine => Kelvin<input type="radio" class="radio" id="rToK" name="chooseConversion" ></label>
-        </div>
-
-
-        <button type="button" id="submit" onclick="convert()">Submit</button>
-
-        <h3 id="outputTemps"></h3>
+    <div id="info">
+        <p id="desc">Kelvins and Rankine both start at absolute 0, only difference is that Kelvins go on the Celcius scale while Rankine goes on the Fahrenheit scale.</p>
     </div>
 
-    <script src="index.js"></script>
-</form>
+</body>
 </html>
