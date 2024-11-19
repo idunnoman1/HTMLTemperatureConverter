@@ -67,6 +67,18 @@ hr{
     padding: 12px;
 }
 
+a:visited{
+    color:black;
+}
+
+a:active{
+    color:white;
+}
+
+a:hover{
+    color:#a0a0a0;
+}
+
 @media screen and (max-width: 500px){
     body{
         background-color: #fff;
